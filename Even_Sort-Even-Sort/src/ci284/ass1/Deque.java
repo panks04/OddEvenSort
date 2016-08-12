@@ -10,6 +10,75 @@ public class Deque{
 
 	// insert an element at the front of the deque
 	public void insertFront(int e) {
+		if(aDeque != null){
+			aDeque.add(0, e);
+		}
+	}
+
+	// insert an element at the back of the deque
+	public void insertBack(int e) {
+		if(aDeque != null){
+		aDeque.add(aDeque.size(), e);
+		}
+	}
+
+	// remove the element at the front of the deque
+	public int removeFront() {
+		int count = 0;
+		if(aDeque != null){
+		count =  aDeque.remove(0);
+		}
+		return count;
+	}
+
+	// remove the element at the back of the deque
+	public int removeBack() {
+		int count = 0;
+		if(aDeque != null){
+		count = aDeque.remove(aDeque.size()-1);
+		}
+		return count;
+
+	}
+
+	// return the element at the front of the deque
+	// without removing it
+	public int peek() {
+		int count = 0;
+		if(aDeque != null){
+		count = aDeque.get(0);
+		}
+		return count;
+	}
+
+	// returns the number of elements in the deque
+	public int length() {
+		int count = 0;
+		for (int i = 0; i < aDeque.size(); i++) { // needs to go through the elements
+			count++;
+		}
+		return count;
+
+	}
+
+	// returns true if the deque is full,
+	// false otherwise
+	public boolean isFull() {
+		for (int i = 0; i < aDeque.size(); i++) {
+			if(!aDeque.isEmpty()){
+				return true;
+			}
+		}
+		return false;
+	}
+
+}
+	
+
+
+	
+/*
+	public void insertFront(int e) {
 		aDeque.add(0, e);
 	}
 
@@ -71,3 +140,5 @@ public class Deque{
 	}
 
 }
+
+*/
